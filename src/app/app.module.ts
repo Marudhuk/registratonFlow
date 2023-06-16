@@ -11,8 +11,10 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { VerifyComponent } from './verify/verify.component';
 import { LoginComponent } from './login/login.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
-import { VerifyForgotpassComponent } from './verify-forgotpass/verify-forgotpass.component';
+import { VerifyForgotpassComponent } from './verify-forgot-email/verify-forgotpass.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { VerifyforgotTokenComponent } from './verifyforgot-token/verifyforgot-token.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     LoginComponent,
     ForgotpassComponent,
     VerifyForgotpassComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    VerifyforgotTokenComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

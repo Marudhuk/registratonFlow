@@ -7,8 +7,10 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { VerifyComponent } from './verify/verify.component';
 import { LoginComponent } from './login/login.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
-import { VerifyForgotpassComponent } from './verify-forgotpass/verify-forgotpass.component';
+import { VerifyForgotpassComponent } from './verify-forgot-email/verify-forgotpass.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { VerifyforgotTokenComponent } from './verifyforgot-token/verifyforgot-token.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {path: 'createUser', component:CreateUserComponent},
@@ -17,11 +19,15 @@ const routes: Routes = [
   {path:'verify',component:VerifyComponent},
   {path: 'verify/:token', component:VerifyComponent},
   {path:'login',component:LoginComponent},
-  {path:'forgotPass',component:ForgotpassComponent},
+  {path:'home',component:DashboardComponent},
+  {path:'forgotPassword',component:ForgotpassComponent},
   {path:'verifyForgotPass',component:VerifyForgotpassComponent},
-  {path:'resetPass',component:ResetPasswordComponent},
+  {path:'resetPassword',component:ResetPasswordComponent},
+  {path:'verifyPassToken',component:VerifyforgotTokenComponent},
+  {path:'verifyPassToken/:token',component:VerifyforgotTokenComponent}
 
-  {path: '', redirectTo: '', pathMatch: 'full'}
+
+  // {path: '', redirectTo: '', pathMatch: 'full'}
 
 ];
 

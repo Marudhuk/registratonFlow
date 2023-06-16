@@ -15,10 +15,29 @@ export class RegisterService {
   }
 
   verifyEmail(token:string|null){
-    return this.http.put(this.url+`/verify/${token}`,"");
+    return this.http.put(this.url+`/verify/${token}`,'');
   }
 
   addPassword(body:any){
     return this.http.put(this.url+`/addPassword`,body)
   }
+
+  loginUser(body:any){
+    return this.http.post(this.url+"/login",body);
+  }
+
+  forgotPassword(body:any){
+    return this.http.post(this.url+"/forgotPassword",body);
+  }
+
+  verifyForgotToken(token:string|null){
+    return this.http.put(this.url+`/verifyPassToken/${token}`,'');
+  } 
+
+  resetPassword(body:any){
+    return this.http.put(this.url+"/resetPassword",body);
+  }
+
+
+
 }
