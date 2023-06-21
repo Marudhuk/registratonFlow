@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { RegisterService } from '../register.service';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-reset-password',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class ResetPasswordComponent {
   
-  constructor(private fb:FormBuilder,private service:RegisterService,private router:Router) { }
+  constructor(private fb:FormBuilder,private service:RegisterService,private router:Router,private messageService:MessageService) { }
 
   reactiveForm=this.fb.group({
     password:[,[Validators.required,Validators.minLength(8),Validators.maxLength(15),Validators.pattern('/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$/')]],
@@ -18,8 +19,9 @@ export class ResetPasswordComponent {
 
   })
 
-  onSubmit(){
-    let token= localStorage.getItem('token');
+  resetPassword(){
+    this.reactiveForm.reset();
+    let token= localStorage.getItem('token'); 
     
     let body={password:this.reactiveForm.value["password"],token:token}
 
@@ -27,6 +29,8 @@ export class ResetPasswordComponent {
       if(data.status){
         console.log(data.message);
         this.router.navigate(['login'])
+      }else{
+        this.messageService.add({ key: 'tc', severity: 'error', summary: 'Error', detail: data.message});
       }
     })
 

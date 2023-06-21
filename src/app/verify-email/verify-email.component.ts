@@ -17,10 +17,5 @@ export class VerifyEmailComponent {
       let token=this.activatedRoute.snapshot.queryParams['token'];
       console.log(token,"token");
     }
-    
-    // this.service.verifyEmail(token).subscribe((res:any)=>{
-    //   console.log(res,"res");
-    // });
-
-  }
+   }
 }

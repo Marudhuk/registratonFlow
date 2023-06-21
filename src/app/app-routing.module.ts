@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CreateUserComponent } from './create-user/create-user.component';
 import { AppComponent } from './app.component';
 import { GetpassComponent } from './getpass/getpass.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
@@ -11,10 +10,11 @@ import { VerifyForgotpassComponent } from './verify-forgot-email/verify-forgotpa
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { VerifyforgotTokenComponent } from './verifyforgot-token/verifyforgot-token.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { RegisterUserComponent } from './register-user/register-user.component';
 
 const routes: Routes = [
-  {path: 'createUser', component:CreateUserComponent},
-  {path:'addPassword',component:GetpassComponent},
+  {path: 'registerUser', component:RegisterUserComponent},
+  {path:'getPassword',component:GetpassComponent},
   {path: 'verifyUser', component:VerifyEmailComponent},
   {path:'verify',component:VerifyComponent},
   {path: 'verify/:token', component:VerifyComponent},
